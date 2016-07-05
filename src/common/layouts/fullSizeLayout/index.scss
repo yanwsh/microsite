@@ -1,0 +1,8 @@
+@import "../../../../config/styles/index";
+@import "../../../client/mixins";
+@import "~bootstrap/scss/grid";
+
+.container-fluid{
+  position: relative;
+  z-index: 3;
+}

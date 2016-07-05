@@ -1,0 +1,94 @@
+@import "../../../../config/styles/index";
+@import "../../../client/mixins";
+
+.social-feeds{
+  &__tile{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background: #1f1f1f;
+    border: 1px solid #343434;
+    padding: 0!important;
+
+    &:hover{
+      background: #343434;
+    }
+
+    &--wrapper{
+      position: relative;
+      padding-top: 100%;
+      overflow: hidden;
+
+      .social-feeds__tile-content{
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        top: 0;
+        left: 0;
+        padding: 12% 8% 0 8%;
+        overflow: hidden;
+      }
+
+      .social-feeds__tile-date{
+        position: absolute;
+        bottom: 3%;
+        left: 8%;
+      }
+
+      .social-feeds__tile-logo{
+        position: absolute;
+        bottom: 2%;
+        right: 3%;
+        font-size: 3em;
+        line-height: 100%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-between(lg, lg){
+  .social-feeds{
+    .social-feeds__tile-content, .social-feeds__tile-date{
+      font-size: 0.8em;
+    }
+
+    .social-feeds__tile-logo{
+      font-size: 2em;
+    }
+  }
+}
+
+@include media-breakpoint-between(md, md){
+  .social-feeds{
+    .social-feeds__tile-content, .social-feeds__tile-date{
+      font-size: 0.7em;
+    }
+
+    .social-feeds__tile-logo{
+      font-size: 2em;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs){
+  .social-feeds{
+    .social-feeds__tile-content{
+      font-size: 1em;
+      font-size: 2.3vw;
+    }
+  }
+}
+
+@include media-breakpoint-down(xxs){
+  .social-feeds{
+    .social-feeds__tile-content{
+      font-size: 2em;
+      font-size: 5vw;
+    }
+  }
+}
+
+@import "facebook";
+@import "twitter";
+@import "brandContent";

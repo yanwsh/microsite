@@ -1,0 +1,5 @@
+'use strict';
+
+export const CLICK_THROUGH = 'CLICK_THROUGH';
+export const UPDATE_ROUTER_STATE = 'UPDATE_ROUTER_STATE';
+export const RESPONSIVE_STATE = 'RESPONSIVE_STATE';

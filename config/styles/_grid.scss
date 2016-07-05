@@ -1,0 +1,60 @@
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+@function converUnitType($type){
+  @if($type == "em"){
+    @return 1em;
+  } @else if($type == "px"){
+    @return 1px;
+  } @else if($type == "rem"){
+    @return 1rem;
+  } @else if($type == "vw"){
+    @return 1vw;
+  } @else if($type == "vh"){
+    @return 1vh;
+  } @else if($type == "pt"){
+    @return 1pt;
+  } @else {
+    @error "Not a valid unit type.";
+    @return $type;
+  }
+}
+
+$grid-unitType: converUnitType($grid-unitType);
+
+$grid-breakpoints: (
+  // Extra Extra small screen / phone
+  xxs: $grid-breakpoints-xxs * $grid-unitType,
+  // Extra small screen / phone portrait
+  xs: $grid-breakpoints-xs * $grid-unitType,
+  // Small screen / phone landscape
+  sm: $grid-breakpoints-sm * $grid-unitType,
+  // Medium screen / tablet
+  md: $grid-breakpoints-md * $grid-unitType,
+  // Large screen / desktop
+  lg: $grid-breakpoints-lg * $grid-unitType,
+  // Extra large screen / wide desktop
+  xl: $grid-breakpoints-xl * $grid-unitType
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  //xs: $grid-max_width-xs * $grid-unitType,
+  //sm: $grid-max_width-sm * $grid-unitType,
+  md: $grid-max_width-md * $grid-unitType,
+  lg: $grid-max_width-lg * $grid-unitType,
+  xl: $grid-max_width-xl * $grid-unitType
+) !default;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:               12 !default;
+$grid-gutter-width:          1.875rem !default; // 30px

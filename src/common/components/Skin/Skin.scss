@@ -1,0 +1,77 @@
+@import "../../../../config/styles/index";
+@import "../../../client/mixins";
+
+@include media-breakpoint-up(lg){
+  .Skin{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    & .Skin--left, & .Skin--right{
+      width: 50%;
+      height: 100%;
+    }
+
+    & .Skin--left{
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      & .Skin--left__creative{
+        position: relative;
+        margin-right: (container_max_width(lg) / 2);
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        cursor: pointer;
+        float: right;
+
+        img{
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+
+    & .Skin--right{
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      & .Skin--right__creative{
+        position: relative;
+        margin-left: (container_max_width(lg) / 2);
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        cursor: pointer;
+        float: left;
+
+        img{
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl){
+  .Skin .Skin--left .Skin--left__creative{
+    margin-right: (container_max_width(xl) / 2);
+  }
+  .Skin .Skin--right .Skin--right__creative{
+    margin-left: (container_max_width(xl) / 2);
+  }
+}
+
+@include media-breakpoint-down(md){
+  .Skin{
+    display: none;
+  }
+}

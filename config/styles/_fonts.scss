@@ -1,0 +1,10 @@
+$assets_path: "../../assets";
+
+@font-face {
+    font-family: 'Tungsten-Semibold';
+    src: url('#{$assets_path}/fonts/Tungsten/Tungsten-Semibold.woff') format('woff'),
+    url('#{$assets_path}/fonts/Tungsten/Tungsten-Semibold.ttf')  format('truetype'),
+    url('#{$assets_path}/fonts/Tungsten/Tungsten-Semibold.svg#Tungsten-Semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/mixins";
+
+%absolute-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@function container_max_width($name, $max-widths: $container-max-widths){
+  @return map-get($container-max-widths, $name);
+}
