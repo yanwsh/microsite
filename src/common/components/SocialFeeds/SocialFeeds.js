@@ -22,7 +22,7 @@ class SocialFeeds extends Component{
     const {options, feeds, pattern} = this.props;
     var rootClass = classNames({
       'social-feeds': true,
-      'row': true,
+      'row': true
     }, options.root.className);
     var tiles = [];
     if(feeds){
@@ -70,27 +70,6 @@ class SocialFeeds extends Component{
         totoal_length = facebook_objs.length + twitter_objs.length;
       }
     }
-
-    // if(feeds){
-    //   if(feeds.facebook){
-    //     tiles = feeds.facebook.reduce(function (result, feed) {
-    //       var props = Object.assign(options.facebook, {key: key++, data: feed});
-    //       result.push(
-    //         <SocialFeeds__facebook {...props} />
-    //       );
-    //       return result;
-    //     }, tiles);
-    //   }
-    //   if(feeds.twitter){
-    //     tiles = feeds.twitter.reduce(function (result, feed) {
-    //       var props = Object.assign(options.twitter, {key: key++, data: feed});
-    //       result.push(
-    //         <SocialFeeds__twitter {...props} />
-    //       );
-    //       return result;
-    //     }, tiles);
-    //   }
-    // }
     return (
       <div className={rootClass}>
         {tiles}

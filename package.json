@@ -49,8 +49,8 @@
     "node-noop": "^1.0.0",
     "normalizr": "^1.0.0",
     "postcss-loader": "^0.9.1",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "react-redux": "^2.1.2",
     "react-router": "^2.3.0",
     "redux": "^3.0.0",
@@ -64,10 +64,15 @@
   },
   "devDependencies": {
     "browser-sync": "^2.12.3",
+    "expect": "^1.20.2",
     "file-loader": "^0.9.0",
     "gulp-nodemon": "^1.0.4",
     "gulp-util": "^3.0.7",
+    "jsdom": "^9.4.1",
+    "mocha": "^2.5.3",
+    "mocha-jsdom": "^1.1.0",
     "node-sass": "^3.7.0",
+    "react-addons-test-utils": "^15.2.0",
     "redux-devtools": "^3.0.0-beta-3",
     "redux-devtools-dock-monitor": "^1.0.0-beta-3",
     "redux-devtools-log-monitor": "^1.0.0-beta-3",
@@ -75,5 +80,9 @@
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
+  },
+  "scripts": {
+    "test": "mocha tests --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch"
   }
 }

@@ -45,11 +45,12 @@ class Skin extends Component{
 }
 
 Skin.propTypes = {
-  // Injected by React Redux
-  leftImageURL: PropTypes.string,
-  rightImageURL: PropTypes.string,
-  clickThrough: PropTypes.string,
-  reportClickThrough: PropTypes.func.isRequired
+    // Injected by React Redux
+    leftImageURL: PropTypes.string,
+    rightImageURL: PropTypes.string,
+    clickThrough: PropTypes.string,
+    reportClickThrough: PropTypes.func.isRequired,
+    responsiveState: PropTypes.object
 };
 
 module.exports = Skin;
