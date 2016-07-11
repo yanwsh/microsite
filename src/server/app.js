@@ -1,6 +1,5 @@
 'use strict';
 
-import "babel-polyfill"
 import express from 'express'
 import compression from 'compression'
 import helmet from 'helmet'
@@ -12,13 +11,13 @@ import { match, createMemoryHistory } from 'react-router'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import Root from '~common/containers/Root'
-import config from '~config'
-import routes from '~common/routes'
-import configureStore from '~common/store/configureStore'
-import rootSaga from '~common/sagas'
+import Root from '../common/containers/Root'
+import config from '../../config'
+import routes from '../common/routes'
+import configureStore from '../common/store/configureStore'
+import rootSaga from '../common/sagas'
 import controllers from './controllers'
-import webpackconfig from '~webpack/client.webpack.config.dev'
+import webpackconfig from '../../webpack/client.webpack.config.dev'
 
 var serverConfig = config.serverConfig;
 
@@ -42,14 +41,14 @@ const layout = (body, initialState) => (`
     <meta charset="UTF-8"/>
     <title>${serverConfig.siteName}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/js/app.bundle.css" />
+    <link rel="stylesheet" href="/assets/app.bundle.css" />
   </head>
   <body>
     <div id="root"><div>${body}</div></div>
     <script type="text/javascript" charset="utf-8">
       window.__INITIAL_STATE__ = ${initialState};
     </script>
-    <script src="/js/app.bundle.js"></script>
+    <script src="/assets/app.bundle.js"></script>
   </body>
   </html>
 `);
@@ -83,7 +82,6 @@ app.use(function(req, res) {
       renderToString(rootComp);
       store.close();
 
-      //res.status(200).send(layout('','{}'))
     } else {
       res.status(404).send('Not found')
     }

@@ -21,11 +21,11 @@ gulp.task('browser-sync', ['nodemon'], function() {
   });
 });
 
-gulp.task('nodemon', ['build-backend'], function (cb) {
+gulp.task('nodemon', function (cb) {
   var called = false;
 
   return nodemon({
-    script: './dist/server.bundle.js',
+    script: './src/server/index.js',
     watch: ['./src/server/', './src/common/', './config/']
   })
   .on('start', function onStart() {
@@ -62,11 +62,6 @@ function onBuild(taskname, isWatch, done) {
 
 gulp.task('build-backend', function(done){
   webpack(webpack_server_config).run(onBuild('build-backend', false, done));
-});
-
-//todo: make backend watch working.
-gulp.task('backend-watch', function() {
-  webpack(webpack_server_config).watch(100, onBuild('backend-watch', true));
 });
 
 //fix nodemon still running problem.

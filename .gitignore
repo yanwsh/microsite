@@ -50,6 +50,4 @@ jspm_packages
 ### program generate files
 dist/*
 storages/*
-public/css/*
-public/js/*
-public/fonts/*
+public/assets/*

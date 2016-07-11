@@ -8,11 +8,11 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 
-import { history } from '~common/services'
-import routes from '~common/routes'
-import Root from '~common/containers/Root'
-import configureStore from '~common/store/configureStore'
-import rootSaga from '~common/sagas'
+import { history } from '../common/services'
+import routes from '../common/routes'
+import Root from '../common/containers/Root'
+import configureStore from '../common/store/configureStore'
+import rootSaga from '../common/sagas'
 
 const store = configureStore(window.__INITIAL_STATE__);
 store.runSaga(rootSaga);

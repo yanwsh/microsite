@@ -9,7 +9,8 @@ config.entry.app.unshift("webpack-hot-middleware/client");
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 config.plugins.push(new webpack.DefinePlugin({
   'process.env': {
-    'NODE_ENV': "'development'"
+      'NODE_ENV': '"development"',
+      'RUN_ENV': '"client"'
   }
 }));
 

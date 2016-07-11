@@ -1,7 +1,7 @@
 'use strict';
 
 import fetch from 'isomorphic-fetch'
-import serverConfig from '~config/server'
+import { serverConfig } from '../index'
 
 function callApi(endpoint) {
   const fullUrl = endpoint;

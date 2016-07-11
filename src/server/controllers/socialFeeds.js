@@ -1,13 +1,13 @@
 'use strict';
 
 import express from 'express'
-import socialFeedsConfig from '~config/socialFeeds'
 import {Facebook} from 'fb'
-import cache from '../cache'
 import { Twitter } from 'twitter-node-client'
-import async from 'async';
-import _ from 'lodash';
-import request from 'request';
+import async from 'async'
+import _ from 'lodash'
+import request from 'request'
+import cache from '../cache'
+import socialFeedsConfig from '../../../config/socialFeeds'
 
 const router = express.Router();
 

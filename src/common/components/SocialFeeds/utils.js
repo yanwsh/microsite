@@ -1,5 +1,11 @@
 'use strict';
 
+if(process.env.RUN_ENV === "server"){
+    require.ensure = function (packages, callback) {
+        callback(require);
+    };
+}
+
 function getMessage(system_date, user_date){
   var diff = Math.floor((user_date.diff(system_date)) / 1000);
   if (diff <= 1) {return "just now";}

@@ -3,7 +3,7 @@
 import { combineReducers } from 'redux';
 import MediaQuery from 'mediaquery';
 import * as ActionTypes from '../../actions/actionTypes';
-import siteConfig from '../../../../config/site';
+import {siteConfig} from '../../index';
 import util from './utils';
 
 function clickthrough(state = {}, action) {

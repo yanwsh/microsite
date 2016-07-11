@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { updateRouterState } from '../actions';
-import siteConfig from '~config/site';
+import { sitePageConfig } from '../index';
 import * as util from './utils';
 
 class App extends Component{
@@ -29,7 +29,7 @@ class App extends Component{
 
   render(){
     const { children, location } = this.props;
-    const pageConfig = siteConfig.pages[this.state.routerName];
+    const pageConfig = sitePageConfig[this.state.routerName];
     var components = [];
     if(pageConfig){
       components = util.complieFromConfiguration(pageConfig.layout);

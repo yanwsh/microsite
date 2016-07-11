@@ -1,9 +1,12 @@
 'use strict';
 
-require("./Skin.scss");
+if(process.env.RUN_ENV !== "server") {
+    require("./Skin.scss");
+}
+
 import { connect } from 'react-redux'
 import Skin from './Skin'
-import { reportClickThrough } from '~common/actions'
+import { reportClickThrough } from '../../actions'
 
 function mapStateToProps(state, ownProps) {
   return {
